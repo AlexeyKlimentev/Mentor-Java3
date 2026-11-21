@@ -1,3 +1,7 @@
+package ru.klimentev.cement.adapter;
+
+import ru.klimentev.cement.model.Order;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -5,14 +9,14 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HashOrderAdapter implements OrderReader {
+public class PipeOrderAdapter implements OrderReader {
     @Override
     public List<Order> read(String path) {
         List<Order> orders = new ArrayList<>();
         try {
             List<String> lines = Files.readAllLines(Path.of(path));
             for (String line : lines) {
-                String[] parts = line.split("#");
+                String[] parts = line.split("\\|");
                 LocalDateTime time = LocalDateTime.parse(parts[0]);
                 String company = parts[1];
                 double weight = Double.parseDouble(parts[2]);

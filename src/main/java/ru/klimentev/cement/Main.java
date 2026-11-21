@@ -1,3 +1,12 @@
+package ru.klimentev.cement;
+
+import ru.klimentev.cement.adapter.HashOrderAdapter;
+import ru.klimentev.cement.adapter.OrderReader;
+import ru.klimentev.cement.adapter.PipeOrderAdapter;
+import ru.klimentev.cement.model.Order;
+import ru.klimentev.cement.service.PromotionService;
+import ru.klimentev.cement.writer.ResultWriter;
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;

@@ -1,3 +1,5 @@
+package ru.klimentev.cement.model;
+
 import java.time.LocalDateTime;
 
 public record Order(
